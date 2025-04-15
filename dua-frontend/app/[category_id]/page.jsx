@@ -10,13 +10,13 @@ export default async function DuaPage({ params }) {
   const data = await getDuaByCategory(category_id);
   return (
     <div className="flex  gap-[30px]">
-      <div className="categories ml-[30px] hidden lg:block bg-white shadow sticky top-4 flex-none w-[429px] h-full rounded-xl overflow-auto">
+      <div className="categories ml-[30px] hidden lg:block bg-white dark:bg-gray-700 dark:text-white shadow sticky top-4 flex-none w-[429px] h-[calc(100vh-40px)] rounded-xl overflow-hidden">
         <Catrgories />
       </div>
       <div className="content w-full">
         {data.map((cat, i) => (
           <div key={i}>
-            <div className="mb-4 bg-white rounded shadow px-8 py-4">
+            <div className="mb-4 bg-white dark:bg-gray-700 dark:text-white rounded shadow px-8 py-4">
               <span className="text-[var(--primary)] font-semibold">
                 Section:{" "}
               </span>
@@ -29,7 +29,7 @@ export default async function DuaPage({ params }) {
           </div>
         ))}
       </div>
-      <div className="setting-panel bg-white shadow-sm sticky top-4  flex-none  hidden xl:block w-[330px] overflow-y-auto h-[calc(100vh-40px)] rounded-3xl">
+      <div className="setting-panel bg-white dark:bg-gray-700 dark:text-white shadow-sm sticky top-4  flex-none  hidden xl:block w-[330px] overflow-y-auto h-[calc(100vh-40px)] rounded-3xl">
         <SettingsPanel />
       </div>
     </div>

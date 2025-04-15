@@ -11,7 +11,7 @@ export default function Header() {
             type="search"
             placeholder="Search by Dua name"
             aria-label="Search content"
-            className="relative bg-white w-full lg:w-96 h-12 px-4 pr-12 transition-all border rounded outline-none focus-visible:outline-none peer border-slate-200 text-slate-500 autofill:bg-white invalid:border-pink-500 invalid:text-pink-500 focus:border-emerald-500 focus:outline-none invalid:focus:border-pink-500 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400"
+            className="relative bg-white dark:bg-gray-700 dark:text-white w-full lg:w-96 h-12 px-4 pr-12 transition-all border rounded outline-none focus-visible:outline-none peer border-slate-200 text-slate-500 autofill:bg-white invalid:border-pink-500 invalid:text-pink-500 focus:border-emerald-500 focus:outline-none invalid:focus:border-pink-500 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400"
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -13,7 +13,7 @@ export default async function DuaPage() {
           <Link
             key={category.cat_id}
             href={`${category.cat_id}`}
-            className="outline outline-gray-300  flex p-2 m-4 gap-4 items-center rounded-2xl"
+            className="outline outline-gray-300 bg-white dark:bg-gray-700 dark:text-white  flex p-2 m-4 gap-4 items-center rounded-2xl"
           >
             <Image src={cat} alt="cat" />
             <div className="">

@@ -24,11 +24,13 @@ const AccordionItem = ({ item, isOpen, onClick }) => {
 
   return (
     <div>
-      <div onClick={handleClick} className="w-full">
+      <div onClick={handleClick} className="w-full my-0.5">
         <summary
           className={`${
-            isOpen ? "bg-[#E8F0F5]" : ""
-          } relative list-none cursor-pointer hover:bg-[#E8F0F5] p-2 rounded-xl focus-visible:outline-none transition-colors duration-300 group-hover:bg-[#E8F0F5]`}
+            isOpen
+              ? "bg-[#E8F0F5] dark:bg-gray-700 dark:border border-gray-500 "
+              : ""
+          } relative list-none cursor-pointer hover:bg-[#E8F0F5] dark:bg-gray-700 dark:hover:outline outline-gray-500 p-2 rounded-xl focus-visible:outline-none transition-colors duration-300 group-hover:bg-[#E8F0F5]`}
         >
           <div className="flex justify-between items-center">
             <div className="flex">
@@ -129,8 +131,8 @@ const CategoryAccordion = () => {
   };
 
   return (
-    <div className="overflow-y-auto h-[calc(100vh-200px)] scrollbar-thin mt-1">
-      <div className="relative mb-4">
+    <div className="overflow-y-auto w-full absolute h-[calc(100vh-100px)] p-4 scrollbar-thin mt-1">
+      <div className="relative mb-4 w-full">
         <input
           type="search"
           value={searchTerm}

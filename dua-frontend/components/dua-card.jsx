@@ -11,7 +11,7 @@ import report from "@/public/icons/report 1.png";
 export default function DuaCard({ dua }) {
   // console.log("dua : ", dua);
   return (
-    <div className="bg-white text-[#393939] rounded shadow-xs px-8 py-4 mb-4">
+    <div className="bg-white  text-[#393939] dark:bg-gray-700 dark:text-white rounded shadow-xs px-8 py-4 mb-4">
       <div className="flex items-center gap-4  mb-4">
         <Image src={allah} alt="allah" />
         <h3 className="font-semibold text-primary">
