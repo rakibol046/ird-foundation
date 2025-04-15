@@ -8,7 +8,7 @@ export default async function getAllCategories() {
   );
 
   if (!res.ok) {
-    throw new Error("Failed to fetch products");
+    throw new Error("Failed to fetch categories");
   }
 
   return res.json();

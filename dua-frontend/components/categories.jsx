@@ -6,129 +6,14 @@ import Link from "next/link";
 import Accordion from "./accordion";
 
 export default async function Catrgories() {
+  console.log("h");
   const categories = await getAllCategories();
   return (
     <div className="">
       <h3 className=" text-center bg-primary p-4 font-semibold">Categories</h3>
       <div className="p-4">
-        <div className="relative mt-1">
-          <input
-            type="search"
-            placeholder="Search by Categories"
-            aria-label="Search content"
-            className="relative w-full h-12 pl-12 pr-4  transition-all border-2 rounded outline-none focus-visible:outline-none peer border-slate-200  autofill:bg-white invalid:border-pink-500 invalid:text-pink-500 focus:border-emerald-500 focus:outline-none invalid:focus:border-pink-500 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400"
-          />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-3.5 left-4 h-5 w-5 cursor-pointer stroke-slate-400 peer-disabled:cursor-not-allowed"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            aria-hidden="true"
-            aria-label="Search icon"
-            role="graphics-symbol"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-            />
-          </svg>
-        </div>
-
-        <Accordion data={categories} />
+        <Accordion />
       </div>
     </div>
   );
-}
-
-{
-  /* <details className="group">
-                <summary className="relative list-none cursor-pointer hover:bg-[#E8F0F5] p-2 rounded-xl focus-visible:outline-none transition-colors duration-300 group-hover:bg-slate-200 ">
-                  <div className="flex justify-between items-center">
-                    <div className="flex">
-                      <Image src={category} alt="category" className="" />
-                      <div className="pl-4">
-                        <p className="text-[var(--primary)]">
-                          {cat.cat_name_en}
-                        </p>
-                        <p className="text-sm text-[#7E7E7E]">
-                          Subcategory : {cat.no_of_subcat}
-                        </p>
-                      </div>
-                    </div>
-                    <div>
-                      <p>{cat.no_of_dua}</p>
-                      <p className="text-sm text-[#7E7E7E]">Duas</p>
-                    </div>
-                  </div>
-                </summary>
-                <ul
-                  aria-label="User feed"
-                  role="feed"
-                  className="relative flex flex-col gap-1 py-2 pl-4 before:absolute before:top-0 before:left-4 before:h-full before:-translate-x-1/2 before:border before:border-dashed before:border-[var(--primary)] "
-                >
-                  <li role="article" className="relative pl-4 ">
-                    <div className="flex flex-col flex-1 gap-4">
-                      <a
-                        href="#"
-                        className="absolute  inline-flex items-center justify-center w-8 h-8 text-white rounded-full -left-4"
-                      >
-                        <img
-                          src="icons/Ellipse.png"
-                          alt="user name"
-                          title="user name"
-                          width="8"
-                          height="8"
-                          className="max-w-full rounded-full"
-                        />
-                      </a>
-                      <h4 className="flex flex-col items-start leading-8 md:flex-row lg:items-center">
-                        Mary Jane
-                      </h4>
-                    </div>
-                  </li>
-                  <li role="article" className="relative pl-4 ">
-                    <div className="flex flex-col flex-1 gap-4">
-                      <a
-                        href="#"
-                        className="absolute  inline-flex items-center justify-center w-8 h-8 text-white rounded-full -left-4"
-                      >
-                        <img
-                          src="icons/Ellipse.png"
-                          alt="user name"
-                          title="user name"
-                          width="8"
-                          height="8"
-                          className="max-w-full rounded-full"
-                        />
-                      </a>
-                      <h4 className="flex flex-col items-start leading-8 md:flex-row lg:items-center">
-                        Mary Jane
-                      </h4>
-                    </div>
-                  </li>
-                  <li role="article" className="relative pl-4 ">
-                    <div className="flex flex-col flex-1 gap-4">
-                      <a
-                        href="#"
-                        className="absolute  inline-flex items-center justify-center w-8 h-8 text-white rounded-full -left-4"
-                      >
-                        <img
-                          src="icons/Ellipse.png"
-                          alt="user name"
-                          title="user name"
-                          width="8"
-                          height="8"
-                          className="max-w-full rounded-full"
-                        />
-                      </a>
-                      <h4 className="flex flex-col items-start leading-8 md:flex-row lg:items-center">
-                        Mary Jane
-                      </h4>
-                    </div>
-                  </li>
-                </ul>
-              </details> */
 }

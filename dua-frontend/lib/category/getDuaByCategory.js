@@ -8,7 +8,7 @@ export default async function getDuaByCategory(category_id) {
   );
 
   if (!res.ok) {
-    throw new Error("Failed to fetch products");
+    throw new Error("Failed to fetch Duas");
   }
 
   return res.json();

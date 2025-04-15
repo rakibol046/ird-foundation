@@ -29,7 +29,7 @@ export default async function DuaPage({ params }) {
           </div>
         ))}
       </div>
-      <div className="setting-panel bg-white shadow-sm sticky top-4  flex-none  hidden lg:block w-[330px] overflow-y-auto h-[calc(100vh-40px)] rounded-3xl">
+      <div className="setting-panel bg-white shadow-sm sticky top-4  flex-none  hidden xl:block w-[330px] overflow-y-auto h-[calc(100vh-40px)] rounded-3xl">
         <SettingsPanel />
       </div>
     </div>

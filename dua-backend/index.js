@@ -36,6 +36,32 @@ app.get("/api/duas/:subcatId", (req, res) => {
   res.json(rows);
 });
 
+app.get("/api/categories-with-subcategories", (req, res) => {
+  try {
+    // Get all categories
+    const categories = db.prepare("SELECT * FROM category").all();
+
+    // Prepare statement to get subcategories for each category
+    const stmtSubcats = db.prepare(
+      "SELECT * FROM sub_category WHERE cat_id = ?"
+    );
+
+    // Map categories with their subcategories
+    const result = categories.map((cat) => {
+      const subcategories = stmtSubcats.all(cat.cat_id);
+      return {
+        ...cat,
+        subcategories,
+      };
+    });
+
+    res.json(result);
+  } catch (error) {
+    console.error("Error fetching categories with subcategories:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 app.get("/api/subcategories-with-duas/:catId", (req, res) => {
   const { catId } = req.params;
 

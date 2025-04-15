@@ -23,13 +23,13 @@ export default function RootLayout({ children }) {
           <div className="flex-none">
             <Aside />
           </div>
-          <main className="w-full flex-auto">
+          <div className="w-full flex-auto">
             <Header />
-            {children}
-          </main>
+            <div>{children}</div>
+          </div>
         </div>
-        {/* <RightAside /> */}
-        <MobileMenu />
+
+        {/* <MobileMenu /> */}
       </body>
     </html>
   );
