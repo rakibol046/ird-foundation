@@ -8,7 +8,7 @@ export default async function DuaPage() {
   return (
     <>
       <h1 className="text-2xl text-center font-bold p-4">Categories of Dua</h1>
-      <div className="m-auto grid grid-cols-3 max-w-2/3 justify-center">
+      <div className="m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4   justify-center">
         {categories.map((category) => (
           <Link
             key={category.cat_id}

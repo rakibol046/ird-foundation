@@ -13,6 +13,10 @@ app.use(cors());
 const dbPath = path.join(__dirname, "db", "dua_main.sqlite");
 const db = new Database(dbPath, { readonly: true });
 
+app.get("/", (req, res) => {
+  res.send("welcome to dua api");
+});
+
 // Get All Categories
 app.get("/api/categories", (req, res) => {
   const stmt = db.prepare("SELECT * FROM category");

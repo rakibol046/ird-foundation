@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 import category_img from "@/public/category.png";
-
+import Link from "next/link";
 const AccordionItem = ({ item, isOpen, onClick }) => {
   const pathname = usePathname();
   const router = useRouter();
@@ -63,11 +63,11 @@ const AccordionItem = ({ item, isOpen, onClick }) => {
                   role="article"
                   className="relative pl-4"
                 >
-                  <div className="flex flex-col flex-1 gap-4">
-                    <a
-                      href="#"
-                      className="absolute inline-flex items-center justify-center w-8 h-8 text-white rounded-full -left-4"
-                    >
+                  <Link
+                    href={`#${sub.subcat_id}`}
+                    className="flex flex-col flex-1 gap-4 hover:text-[var(--primary)]"
+                  >
+                    <div className="absolute inline-flex items-center justify-center w-8 h-8 text-white rounded-full -left-4">
                       <img
                         src="icons/Ellipse.png"
                         alt="user name"
@@ -76,11 +76,11 @@ const AccordionItem = ({ item, isOpen, onClick }) => {
                         height="8"
                         className="max-w-full rounded-full"
                       />
-                    </a>
+                    </div>
                     <h4 className="flex flex-col items-start leading-8 md:flex-row lg:items-center">
                       {sub.subcat_name_en}
                     </h4>
-                  </div>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -104,7 +104,7 @@ const CategoryAccordion = () => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          "http://localhost:4000/api/categories-with-subcategories",
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}api/categories-with-subcategories`,
           {
             cache: "force-cache",
           }

@@ -24,8 +24,11 @@ export default function Aside() {
       <div>
         <ul className="flex flex-col gap-5">
           <li>
-            <Image src={home} alt="icon" />
+            <Link href="/">
+              <Image src={home} alt="icon" />
+            </Link>
           </li>
+
           <li>
             <Image src={dua} alt="icon" />
           </li>
@@ -57,7 +60,9 @@ export function MobileMenu() {
       <div className="fixed lg:hidden left-0 bottom-0 w-full bg-[var(--primary)] p-4 shadow-3xl ">
         <ul className="flex gap-5 justify-center items-center">
           <li>
-            <Image src={home} alt="icon" />
+            <Link href="/">
+              <Image src={home} alt="icon" />
+            </Link>
           </li>
           <li>
             <Image src={dua} alt="icon" />

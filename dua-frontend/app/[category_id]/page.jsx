@@ -6,7 +6,7 @@ import getDuaByCategory from "@/lib/category/getDuaByCategory";
 
 export default async function DuaPage({ params }) {
   const { category_id } = await params;
-  console.log(category_id);
+
   const data = await getDuaByCategory(category_id);
   return (
     <div className="flex  gap-[30px]">
@@ -15,7 +15,7 @@ export default async function DuaPage({ params }) {
       </div>
       <div className="content w-full">
         {data.map((cat, i) => (
-          <div key={i}>
+          <div key={cat.subcat_id} id={cat.subcat_id}>
             <div className="mb-4 bg-white dark:bg-gray-700 dark:text-white rounded shadow px-8 py-4">
               <span className="text-[var(--primary)] font-semibold">
                 Section:{" "}

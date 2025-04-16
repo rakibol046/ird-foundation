@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
             </div>
           </div>
 
-          {/* <MobileMenu /> */}
+          <MobileMenu />
         </ThemeProvider>
       </body>
     </html>
